@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Project</title>
-    <link rel="stylesheet"
-href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Project</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>Hi, I'm Owolaris</h1>
-<p>Aspiring Web Developer | Learning Git & GitHub</p>
+  <header class="header">
+    <h1>Healthcare Robotics</h1>
+    <p class="subtitle">Exploring how robots improve patient care, surgery, and hospital efficiency.</p>
+    <button id="ctaBtn" class="btn">Click me</button>
+    <p id="message" class="message"></p>
+  </header>
 
-<button id="toggleBtn">Click Me</button>
-    <script>
-  const button = document.querySelector("button");
-  const paragraph = document.querySelector("p");
+  <main class="container">
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        This website is a student project about healthcare robotics. It explains key applications,
+        benefits, and challenges, and shows how robotics supports modern healthcare.
+      </p>
+    </section>
 
-  function setUI(isClicked) {
-    if (isClicked) {
-      button.classList.add("clicked");
-      paragraph.textContent = "You clicked the button successfully!";
-      button.textContent = "Clicked!";
-    } else {
-      button.classList.remove("clicked");
-      paragraph.textContent = "I am learning Git and Web Development.";
-      button.textContent = "Click me";
-    }
-  }
+    <section class="card">
+      <h2>Key Uses of Healthcare Robots</h2>
+      <ul>
+        <li>Robotic-assisted surgery</li>
+        <li>Rehabilitation and physiotherapy support</li>
+        <li>Hospital delivery and logistics</li>
+        <li>Disinfection and cleaning</li>
+        <li>Remote monitoring and telepresence</li>
+      </ul>
+    </section>
 
-  // Load saved state on page load
-  const saved = localStorage.getItem("clickedState");
-  const isClicked = saved === "true";
-  setUI(isClicked);
+    <section class="card">
+      <h2>Why it matters</h2>
+      <p>
+        Healthcare robots can improve accuracy, reduce workload for staff, and support safer patient care.
+        They also raise questions about cost, training, privacy, and safety standards.
+      </p>
+    </section>
+  </main>
 
-  // Toggle + save state on click
-  button.addEventListener("click", function () {
-    const nowClicked = !button.classList.contains("clicked");
-    setUI(nowClicked);
-    localStorage.setItem("clickedState", String(nowClicked));
-  });
-</script>
+  <footer class="footer">
+    <p>© <span id="year"></span> My First Project</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("ctaBtn");
+    const msg = document.getElementById("message");
+    const year = document.getElementById("year");
+
+    year.textContent = new Date().getFullYear();
+
+    btn.addEventListener("click", () => {
+      msg.textContent = "You clicked the button successfully!";
+      btn.classList.add("clicked");
+      btn.textContent = "Clicked!";
+    });
+  </script>
 </body>
 </html>

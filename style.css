@@ -1,31 +1,80 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
-    color: white;
-    text-align: center;
-    padding-top: 100px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
 }
 
-h1 {
-    font-size: 40px;
+.header {
+  text-align: center;
+  padding: 70px 20px 40px;
 }
 
-p {
-    font-size: 20px;
-    margin-bottom: 30px;
+.header h1 {
+  font-size: 44px;
+  margin: 0;
+  color: #1e3c72;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: white;
-    color: #1e3c72;
-    transition: 0.3s;
+.subtitle {
+  font-size: 18px;
+  color: #555;
+  margin: 12px 0 22px;
 }
 
-button:hover {
-    background-color: #ddd;
+.btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1e3c72;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn.clicked {
+  background: #2e7d32; /* green */
+}
+
+.message {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px 50px;
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  padding: 18px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #1e3c72;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: #666;
 }
