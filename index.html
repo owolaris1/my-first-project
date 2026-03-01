@@ -6,8 +6,39 @@
 href="style.css">
 
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    <p>I am learning Git and Web Development.</p>
+    <h1>Hi, I'm Owolaris</h1>
+<p>Aspiring Web Developer | Learning Git & GitHub</p>
+
+<button id="toggleBtn">Click Me</button>
+    <script>
+  const button = document.querySelector("button");
+  const paragraph = document.querySelector("p");
+
+  function setUI(isClicked) {
+    if (isClicked) {
+      button.classList.add("clicked");
+      paragraph.textContent = "You clicked the button successfully!";
+      button.textContent = "Clicked!";
+    } else {
+      button.classList.remove("clicked");
+      paragraph.textContent = "I am learning Git and Web Development.";
+      button.textContent = "Click me";
+    }
+  }
+
+  // Load saved state on page load
+  const saved = localStorage.getItem("clickedState");
+  const isClicked = saved === "true";
+  setUI(isClicked);
+
+  // Toggle + save state on click
+  button.addEventListener("click", function () {
+    const nowClicked = !button.classList.contains("clicked");
+    setUI(nowClicked);
+    localStorage.setItem("clickedState", String(nowClicked));
+  });
+</script>
 </body>
 </html>
